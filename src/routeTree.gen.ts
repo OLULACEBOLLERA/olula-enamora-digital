@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArtistasRouteImport } from './routes/artistas'
+import { Route as PregoneraRouteImport } from './routes/pregonera'
+import { Route as ProgramaRouteImport } from './routes/programa'
+import { Route as ReinasRouteImport } from './routes/reinas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtistasRoute = ArtistasRouteImport.update({
+  id: '/artistas',
+  path: '/artistas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PregoneraRoute = PregoneraRouteImport.update({
+  id: '/pregonera',
+  path: '/pregonera',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramaRoute = ProgramaRouteImport.update({
+  id: '/programa',
+  path: '/programa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReinasRoute = ReinasRouteImport.update({
+  id: '/reinas',
+  path: '/reinas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/artistas': typeof ArtistasRoute
+  '/pregonera': typeof PregoneraRoute
+  '/programa': typeof ProgramaRoute
+  '/reinas': typeof ReinasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/artistas': typeof ArtistasRoute
+  '/pregonera': typeof PregoneraRoute
+  '/programa': typeof ProgramaRoute
+  '/reinas': typeof ReinasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/artistas': typeof ArtistasRoute
+  '/pregonera': typeof PregoneraRoute
+  '/programa': typeof ProgramaRoute
+  '/reinas': typeof ReinasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
+  id: '__root__' | '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArtistasRoute: typeof ArtistasRoute
+  PregoneraRoute: typeof PregoneraRoute
+  ProgramaRoute: typeof ProgramaRoute
+  ReinasRoute: typeof ReinasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artistas': {
+      id: '/artistas'
+      path: '/artistas'
+      fullPath: '/artistas'
+      preLoaderRoute: typeof ArtistasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pregonera': {
+      id: '/pregonera'
+      path: '/pregonera'
+      fullPath: '/pregonera'
+      preLoaderRoute: typeof PregoneraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programa': {
+      id: '/programa'
+      path: '/programa'
+      fullPath: '/programa'
+      preLoaderRoute: typeof ProgramaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reinas': {
+      id: '/reinas'
+      path: '/reinas'
+      fullPath: '/reinas'
+      preLoaderRoute: typeof ReinasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArtistasRoute: ArtistasRoute,
+  PregoneraRoute: PregoneraRoute,
+  ProgramaRoute: ProgramaRoute,
+  ReinasRoute: ReinasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

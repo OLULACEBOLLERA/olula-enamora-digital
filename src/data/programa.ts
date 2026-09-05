@@ -1,6 +1,6 @@
 /**
  * Programa oficial — transcrito del Libro Oficial de la Feria y Fiestas
- * de Olula del Río 2026 ("OLULA ENAMORA"). No añadir datos no verificados.
+ * de Olula del Río 2026 ("OLULA EN FERIA"). No añadir datos no verificados.
  */
 
 export type Acto = {
