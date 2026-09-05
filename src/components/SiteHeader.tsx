@@ -25,7 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link to="/" className="flex items-baseline gap-2" onClick={() => setAbierto(false)}>
           <span className="titular text-lg leading-none sm:text-xl">Olula</span>
-          <span className="manuscrita text-2xl text-magenta sm:text-3xl">enamora</span>
+          <span className="manuscrita text-2xl text-magenta sm:text-3xl">en feria</span>
         </Link>
 
         <nav className="hidden lg:block" aria-label="Navegación principal">

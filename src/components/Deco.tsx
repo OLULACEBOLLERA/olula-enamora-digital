@@ -1,4 +1,4 @@
-/** Elementos gráficos de la campaña "Olula Enamora": ondas, rayas y lunares. */
+/** Elementos gráficos de la campaña "Olula en feria": ondas, rayas y lunares. */
 
 export function Onda({
   className = "",

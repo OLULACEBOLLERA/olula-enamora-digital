@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="titular text-2xl">Feria y Fiestas</p>
-          <p className="manuscrita text-4xl text-amarillo">Olula enamora</p>
+          <p className="manuscrita text-4xl text-amarillo">Olula en feria</p>
           <p className="mt-3 text-sm text-background/70">
             Olula del Río · Del 17 al 20 de septiembre de 2026
           </p>

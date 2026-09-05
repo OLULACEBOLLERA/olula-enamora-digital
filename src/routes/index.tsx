@@ -38,7 +38,7 @@ function Inicio() {
                 Feria y Fiestas
               </span>
               <span className="manuscrita mt-1 block text-[16vw] leading-none text-magenta sm:text-7xl lg:text-8xl">
-                Olula enamora
+                Olula en feria
               </span>
               <span className="titular mt-2 block text-3xl text-turquesa-dark sm:text-4xl">
                 Olula del Río · 2026
