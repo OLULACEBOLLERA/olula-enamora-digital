@@ -10,19 +10,38 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActividadesRouteImport } from './routes/actividades'
 import { Route as ArtistasRouteImport } from './routes/artistas'
+import { Route as ComercioRouteImport } from './routes/comercio'
+import { Route as FeriaDelMediodiaRouteImport } from './routes/feria-del-mediodia'
 import { Route as PregoneraRouteImport } from './routes/pregonera'
 import { Route as ProgramaRouteImport } from './routes/programa'
 import { Route as ReinasRouteImport } from './routes/reinas'
+import { Route as SaludaRouteImport } from './routes/saluda'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActividadesRoute = ActividadesRouteImport.update({
+  id: '/actividades',
+  path: '/actividades',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArtistasRoute = ArtistasRouteImport.update({
   id: '/artistas',
   path: '/artistas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComercioRoute = ComercioRouteImport.update({
+  id: '/comercio',
+  path: '/comercio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeriaDelMediodiaRoute = FeriaDelMediodiaRouteImport.update({
+  id: '/feria-del-mediodia',
+  path: '/feria-del-mediodia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PregoneraRoute = PregoneraRouteImport.update({
@@ -40,43 +59,92 @@ const ReinasRoute = ReinasRouteImport.update({
   path: '/reinas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SaludaRoute = SaludaRouteImport.update({
+  id: '/saluda',
+  path: '/saluda',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
   '/artistas': typeof ArtistasRoute
+  '/comercio': typeof ComercioRoute
+  '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
   '/reinas': typeof ReinasRoute
+  '/saluda': typeof SaludaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
   '/artistas': typeof ArtistasRoute
+  '/comercio': typeof ComercioRoute
+  '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
   '/reinas': typeof ReinasRoute
+  '/saluda': typeof SaludaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/actividades': typeof ActividadesRoute
   '/artistas': typeof ArtistasRoute
+  '/comercio': typeof ComercioRoute
+  '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
   '/reinas': typeof ReinasRoute
+  '/saluda': typeof SaludaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
+  fullPaths:
+    | '/'
+    | '/actividades'
+    | '/artistas'
+    | '/comercio'
+    | '/feria-del-mediodia'
+    | '/pregonera'
+    | '/programa'
+    | '/reinas'
+    | '/saluda'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
-  id: '__root__' | '/' | '/artistas' | '/pregonera' | '/programa' | '/reinas'
+  to:
+    | '/'
+    | '/actividades'
+    | '/artistas'
+    | '/comercio'
+    | '/feria-del-mediodia'
+    | '/pregonera'
+    | '/programa'
+    | '/reinas'
+    | '/saluda'
+  id:
+    | '__root__'
+    | '/'
+    | '/actividades'
+    | '/artistas'
+    | '/comercio'
+    | '/feria-del-mediodia'
+    | '/pregonera'
+    | '/programa'
+    | '/reinas'
+    | '/saluda'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActividadesRoute: typeof ActividadesRoute
   ArtistasRoute: typeof ArtistasRoute
+  ComercioRoute: typeof ComercioRoute
+  FeriaDelMediodiaRoute: typeof FeriaDelMediodiaRoute
   PregoneraRoute: typeof PregoneraRoute
   ProgramaRoute: typeof ProgramaRoute
   ReinasRoute: typeof ReinasRoute
+  SaludaRoute: typeof SaludaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -88,11 +156,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/actividades': {
+      id: '/actividades'
+      path: '/actividades'
+      fullPath: '/actividades'
+      preLoaderRoute: typeof ActividadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/artistas': {
       id: '/artistas'
       path: '/artistas'
       fullPath: '/artistas'
       preLoaderRoute: typeof ArtistasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comercio': {
+      id: '/comercio'
+      path: '/comercio'
+      fullPath: '/comercio'
+      preLoaderRoute: typeof ComercioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feria-del-mediodia': {
+      id: '/feria-del-mediodia'
+      path: '/feria-del-mediodia'
+      fullPath: '/feria-del-mediodia'
+      preLoaderRoute: typeof FeriaDelMediodiaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pregonera': {
@@ -116,15 +205,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReinasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/saluda': {
+      id: '/saluda'
+      path: '/saluda'
+      fullPath: '/saluda'
+      preLoaderRoute: typeof SaludaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActividadesRoute: ActividadesRoute,
   ArtistasRoute: ArtistasRoute,
+  ComercioRoute: ComercioRoute,
+  FeriaDelMediodiaRoute: FeriaDelMediodiaRoute,
   PregoneraRoute: PregoneraRoute,
   ProgramaRoute: ProgramaRoute,
   ReinasRoute: ReinasRoute,
+  SaludaRoute: SaludaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
