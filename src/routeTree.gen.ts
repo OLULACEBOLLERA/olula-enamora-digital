@@ -14,8 +14,12 @@ import { Route as ActividadesRouteImport } from './routes/actividades'
 import { Route as ArtistasRouteImport } from './routes/artistas'
 import { Route as ComercioRouteImport } from './routes/comercio'
 import { Route as FeriaDelMediodiaRouteImport } from './routes/feria-del-mediodia'
+import { Route as HistoriaRouteImport } from './routes/historia'
+import { Route as InformacionRouteImport } from './routes/informacion'
 import { Route as PregoneraRouteImport } from './routes/pregonera'
 import { Route as ProgramaRouteImport } from './routes/programa'
+import { Route as QueVerRouteImport } from './routes/que-ver'
+import { Route as RecuerdoRouteImport } from './routes/recuerdo'
 import { Route as ReinasRouteImport } from './routes/reinas'
 import { Route as SaludaRouteImport } from './routes/saluda'
 
@@ -44,6 +48,16 @@ const FeriaDelMediodiaRoute = FeriaDelMediodiaRouteImport.update({
   path: '/feria-del-mediodia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoriaRoute = HistoriaRouteImport.update({
+  id: '/historia',
+  path: '/historia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InformacionRoute = InformacionRouteImport.update({
+  id: '/informacion',
+  path: '/informacion',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PregoneraRoute = PregoneraRouteImport.update({
   id: '/pregonera',
   path: '/pregonera',
@@ -52,6 +66,16 @@ const PregoneraRoute = PregoneraRouteImport.update({
 const ProgramaRoute = ProgramaRouteImport.update({
   id: '/programa',
   path: '/programa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QueVerRoute = QueVerRouteImport.update({
+  id: '/que-ver',
+  path: '/que-ver',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecuerdoRoute = RecuerdoRouteImport.update({
+  id: '/recuerdo',
+  path: '/recuerdo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReinasRoute = ReinasRouteImport.update({
@@ -71,8 +95,12 @@ export interface FileRoutesByFullPath {
   '/artistas': typeof ArtistasRoute
   '/comercio': typeof ComercioRoute
   '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
+  '/historia': typeof HistoriaRoute
+  '/informacion': typeof InformacionRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
+  '/que-ver': typeof QueVerRoute
+  '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
 }
@@ -82,8 +110,12 @@ export interface FileRoutesByTo {
   '/artistas': typeof ArtistasRoute
   '/comercio': typeof ComercioRoute
   '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
+  '/historia': typeof HistoriaRoute
+  '/informacion': typeof InformacionRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
+  '/que-ver': typeof QueVerRoute
+  '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
 }
@@ -94,8 +126,12 @@ export interface FileRoutesById {
   '/artistas': typeof ArtistasRoute
   '/comercio': typeof ComercioRoute
   '/feria-del-mediodia': typeof FeriaDelMediodiaRoute
+  '/historia': typeof HistoriaRoute
+  '/informacion': typeof InformacionRoute
   '/pregonera': typeof PregoneraRoute
   '/programa': typeof ProgramaRoute
+  '/que-ver': typeof QueVerRoute
+  '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
 }
@@ -107,8 +143,12 @@ export interface FileRouteTypes {
     | '/artistas'
     | '/comercio'
     | '/feria-del-mediodia'
+    | '/historia'
+    | '/informacion'
     | '/pregonera'
     | '/programa'
+    | '/que-ver'
+    | '/recuerdo'
     | '/reinas'
     | '/saluda'
   fileRoutesByTo: FileRoutesByTo
@@ -118,8 +158,12 @@ export interface FileRouteTypes {
     | '/artistas'
     | '/comercio'
     | '/feria-del-mediodia'
+    | '/historia'
+    | '/informacion'
     | '/pregonera'
     | '/programa'
+    | '/que-ver'
+    | '/recuerdo'
     | '/reinas'
     | '/saluda'
   id:
@@ -129,8 +173,12 @@ export interface FileRouteTypes {
     | '/artistas'
     | '/comercio'
     | '/feria-del-mediodia'
+    | '/historia'
+    | '/informacion'
     | '/pregonera'
     | '/programa'
+    | '/que-ver'
+    | '/recuerdo'
     | '/reinas'
     | '/saluda'
   fileRoutesById: FileRoutesById
@@ -141,8 +189,12 @@ export interface RootRouteChildren {
   ArtistasRoute: typeof ArtistasRoute
   ComercioRoute: typeof ComercioRoute
   FeriaDelMediodiaRoute: typeof FeriaDelMediodiaRoute
+  HistoriaRoute: typeof HistoriaRoute
+  InformacionRoute: typeof InformacionRoute
   PregoneraRoute: typeof PregoneraRoute
   ProgramaRoute: typeof ProgramaRoute
+  QueVerRoute: typeof QueVerRoute
+  RecuerdoRoute: typeof RecuerdoRoute
   ReinasRoute: typeof ReinasRoute
   SaludaRoute: typeof SaludaRoute
 }
@@ -184,6 +236,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeriaDelMediodiaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/historia': {
+      id: '/historia'
+      path: '/historia'
+      fullPath: '/historia'
+      preLoaderRoute: typeof HistoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/informacion': {
+      id: '/informacion'
+      path: '/informacion'
+      fullPath: '/informacion'
+      preLoaderRoute: typeof InformacionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pregonera': {
       id: '/pregonera'
       path: '/pregonera'
@@ -196,6 +262,20 @@ declare module '@tanstack/react-router' {
       path: '/programa'
       fullPath: '/programa'
       preLoaderRoute: typeof ProgramaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/que-ver': {
+      id: '/que-ver'
+      path: '/que-ver'
+      fullPath: '/que-ver'
+      preLoaderRoute: typeof QueVerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recuerdo': {
+      id: '/recuerdo'
+      path: '/recuerdo'
+      fullPath: '/recuerdo'
+      preLoaderRoute: typeof RecuerdoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reinas': {
@@ -221,8 +301,12 @@ const rootRouteChildren: RootRouteChildren = {
   ArtistasRoute: ArtistasRoute,
   ComercioRoute: ComercioRoute,
   FeriaDelMediodiaRoute: FeriaDelMediodiaRoute,
+  HistoriaRoute: HistoriaRoute,
+  InformacionRoute: InformacionRoute,
   PregoneraRoute: PregoneraRoute,
   ProgramaRoute: ProgramaRoute,
+  QueVerRoute: QueVerRoute,
+  RecuerdoRoute: RecuerdoRoute,
   ReinasRoute: ReinasRoute,
   SaludaRoute: SaludaRoute,
 }
