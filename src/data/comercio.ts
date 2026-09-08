@@ -267,6 +267,7 @@ export const comercios: Comercio[] = [
   { nombre: "Antonio Fco. Sánchez Sánchez · Pirotecnia", categoria: "Ocio, eventos y sonido", telefonos: ["620 731 696", "950 423 417"], direccion: "C/ Altillo, 14, 04878 Suflí", estado: "libro" },
   { nombre: "Panadería Sánchez Lázaro · Artesanos", categoria: "Alimentación", telefonos: ["637 440 110", "627 024 359"], estado: "libro" },
   { nombre: "Hijos de Ramón García, S.L. · RG Funerarias", categoria: "Seguros y servicios financieros", telefonos: ["950 441 818", "670 459 483", "690 218 047", "689 598 661", "639 350 990", "950 122 805", "606 304 586", "958 710 799", "657 967 573"], estado: "libro" },
+];
 
 export const telefonosInteres = [
   { nombre: "Aeropuerto Almería", telefono: "950 213 700" },
