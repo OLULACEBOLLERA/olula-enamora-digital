@@ -242,9 +242,6 @@ export const comercios: Comercio[] = [
   { nombre: "Transportes A. Galera e Hijos", categoria: "Transporte y taxis", telefonos: ["950 441 654"], estado: "libro" },
   { nombre: "Transportes Flopersa, S.L.", categoria: "Transporte y taxis", telefonos: ["670 620 109"], estado: "libro" },
   { nombre: "Transportes José Abarca", categoria: "Transporte y taxis", telefonos: ["950 444 188", "617 390 218", "617 390 217"], estado: "libro" },
-];
-
-
   { nombre: "Ágora Fines", categoria: "Hostelería y restauración", telefonos: ["666 570 036", "687 890 280"], direccion: "Avda. Madrid (Edificio Mirasierrra), 04869 Fines", estado: "libro" },
   { nombre: "Más Salud Clínica Médica", categoria: "Salud y bienestar", telefonos: ["950 443 525", "617 171 884"], estado: "libro" },
   { nombre: "Admón. Lotería José Valenzuela", categoria: "Comercio y regalo", telefonos: ["950 441 093"], estado: "libro" },
