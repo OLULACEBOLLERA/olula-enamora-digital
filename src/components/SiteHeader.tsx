@@ -13,6 +13,11 @@ const enlaces = [
   { to: "/actividades", label: "Actividades" },
   { to: "/comercio", label: "Comercio" },
   { to: "/recuerdo", label: "Olula en el Recuerdo" },
+  { to: "/que-ver", label: "Qué ver" },
+  { to: "/historia", label: "Historia" },
+  { to: "/galeria", label: "Fotos" },
+  { to: "/prensa", label: "Prensa" },
+  { to: "/objetos-perdidos", label: "Objetos perdidos" },
   { to: "/informacion", label: "Información" },
 ] as const;
 
