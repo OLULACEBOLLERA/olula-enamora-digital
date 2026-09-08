@@ -42,6 +42,11 @@ export function SiteFooter() {
             </li>
             <li><Link to="/comercio" className="hover:text-amarillo">Guía comercial</Link></li>
             <li><Link to="/informacion" className="hover:text-amarillo">Información y lugares</Link></li>
+            <li><Link to="/que-ver" className="hover:text-amarillo">Qué ver en Olula</Link></li>
+            <li><Link to="/historia" className="hover:text-amarillo">Historia del pueblo</Link></li>
+            <li><Link to="/galeria" className="hover:text-amarillo">Fotos de la feria</Link></li>
+            <li><Link to="/prensa" className="hover:text-amarillo">Prensa</Link></li>
+            <li><Link to="/objetos-perdidos" className="hover:text-amarillo">Objetos perdidos</Link></li>
           </ul>
         </div>
       </div>

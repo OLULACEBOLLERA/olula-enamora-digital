@@ -9,9 +9,8 @@ const DESC =
   "Programa por días de la Feria y Fiestas de Olula del Río 2026: pregón, coronación, Feria del Mediodía, orquestas, conciertos y fuegos artificiales, con hora y lugar.";
 
 export const Route = createFileRoute("/programa")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    dia: typeof search.dia === "string" ? search.dia : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { dia?: string } =>
+    typeof search["dia"] === "string" ? { dia: search["dia"] } : {},
   head: () => ({
     meta: [
       { title: TITULO },
@@ -58,7 +57,7 @@ const etiquetas: Record<string, { texto: string; clase: string }> = {
 function Programa() {
   const { dia } = Route.useSearch();
   const navigate = useNavigate({ from: "/programa" });
-  const activo = dias.find((d) => d.id === dia) ?? dias[0];
+  const activo = dias.find((d) => d.id === dia) ?? dias[0]!;
 
   return (
     <>

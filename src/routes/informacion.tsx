@@ -19,7 +19,7 @@ export const Route = createFileRoute("/informacion")({
     ],
     links: [{ rel: "canonical", href: "/informacion" }],
   }),
-  component: Informacion;
+  component: Informacion,
 });
 
 function Informacion() {
