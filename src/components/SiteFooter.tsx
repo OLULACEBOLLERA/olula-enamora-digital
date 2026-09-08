@@ -16,7 +16,7 @@ export function SiteFooter() {
         <div>
           <h2 className="titular text-sm text-turquesa">La Feria</h2>
           <ul className="mt-3 space-y-2 text-sm text-background/80">
-            <li><Link to="/programa" className="hover:text-amarillo">Programa por días</Link></li>
+            <li><Link to="/programa" search={{ dia: undefined }} className="hover:text-amarillo">Programa por días</Link></li>
             <li><Link to="/artistas" className="hover:text-amarillo">Artistas y conciertos</Link></li>
             <li><Link to="/feria-del-mediodia" className="hover:text-amarillo">Feria del Mediodía</Link></li>
             <li><Link to="/actividades" className="hover:text-amarillo">Actividades previas</Link></li>
