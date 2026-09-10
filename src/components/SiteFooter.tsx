@@ -29,6 +29,7 @@ export function SiteFooter() {
             <li><Link to="/pregonera" className="hover:text-amarillo">Pregonera</Link></li>
             <li><Link to="/saluda" className="hover:text-amarillo">Saluda del Alcalde</Link></li>
             <li><Link to="/recuerdo" className="hover:text-amarillo">Olula en el Recuerdo</Link></li>
+            <li><Link to="/historias" className="hover:text-amarillo">Historias de Olula 2026</Link></li>
           </ul>
         </div>
         <div>
