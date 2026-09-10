@@ -26,6 +26,7 @@ import { Route as RecuerdoRouteImport } from './routes/recuerdo'
 import { Route as ReinasRouteImport } from './routes/reinas'
 import { Route as SaludaRouteImport } from './routes/saluda'
 import { Route as HistoriasIndexRouteImport } from './routes/historias.index'
+import { Route as HistoriasSlugRouteImport } from './routes/historias.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -112,6 +113,11 @@ const HistoriasIndexRoute = HistoriasIndexRouteImport.update({
   path: '/historias/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoriasSlugRoute = HistoriasSlugRouteImport.update({
+  id: '/historias/$slug',
+  path: '/historias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -130,6 +136,7 @@ export interface FileRoutesByFullPath {
   '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
+  '/historias/$slug': typeof HistoriasSlugRoute
   '/historias/': typeof HistoriasIndexRoute
 }
 export interface FileRoutesByTo {
@@ -149,6 +156,7 @@ export interface FileRoutesByTo {
   '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
+  '/historias/$slug': typeof HistoriasSlugRoute
   '/historias': typeof HistoriasIndexRoute
 }
 export interface FileRoutesById {
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/recuerdo': typeof RecuerdoRoute
   '/reinas': typeof ReinasRoute
   '/saluda': typeof SaludaRoute
+  '/historias/$slug': typeof HistoriasSlugRoute
   '/historias/': typeof HistoriasIndexRoute
 }
 export interface FileRouteTypes {
@@ -190,6 +199,7 @@ export interface FileRouteTypes {
     | '/recuerdo'
     | '/reinas'
     | '/saluda'
+    | '/historias/$slug'
     | '/historias/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -209,6 +219,7 @@ export interface FileRouteTypes {
     | '/recuerdo'
     | '/reinas'
     | '/saluda'
+    | '/historias/$slug'
     | '/historias'
   id:
     | '__root__'
@@ -228,6 +239,7 @@ export interface FileRouteTypes {
     | '/recuerdo'
     | '/reinas'
     | '/saluda'
+    | '/historias/$slug'
     | '/historias/'
   fileRoutesById: FileRoutesById
 }
@@ -248,6 +260,7 @@ export interface RootRouteChildren {
   RecuerdoRoute: typeof RecuerdoRoute
   ReinasRoute: typeof ReinasRoute
   SaludaRoute: typeof SaludaRoute
+  HistoriasSlugRoute: typeof HistoriasSlugRoute
   HistoriasIndexRoute: typeof HistoriasIndexRoute
 }
 
@@ -372,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HistoriasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/historias/$slug': {
+      id: '/historias/$slug'
+      path: '/historias/$slug'
+      fullPath: '/historias/$slug'
+      preLoaderRoute: typeof HistoriasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -392,6 +412,7 @@ const rootRouteChildren: RootRouteChildren = {
   RecuerdoRoute: RecuerdoRoute,
   ReinasRoute: ReinasRoute,
   SaludaRoute: SaludaRoute,
+  HistoriasSlugRoute: HistoriasSlugRoute,
   HistoriasIndexRoute: HistoriasIndexRoute,
 }
 export const routeTree = rootRouteImport
