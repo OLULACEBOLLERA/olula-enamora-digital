@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { dias } from "../data/programa";
 import { artistas } from "../data/artistas";
 import { img } from "../data/imagenes";
-import { anaBelen } from "../data/historias";
 import { AvisoAccesibilidad } from "../components/AvisoAccesibilidad";
 import { ArcoRayas, CintaColores, Onda } from "../components/Deco";
 
@@ -166,7 +165,7 @@ function Inicio() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-16">
+      <section className="mx-auto max-w-6xl px-4 pb-16">
         <h2 className="titular text-3xl sm:text-4xl">Protagonistas de 2026</h2>
         <ul className="mt-8 grid gap-5 sm:grid-cols-3">
           <li className="tarjeta overflow-hidden">
@@ -221,45 +220,6 @@ function Inicio() {
             </div>
           </li>
         </ul>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <header className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="manuscrita text-4xl text-turquesa-dark">gente de aquí</p>
-            <h2 className="titular text-3xl sm:text-4xl">Historias de Olula 2026</h2>
-          </div>
-          <Link to="/historias" className="text-sm font-bold uppercase tracking-wide text-magenta hover:underline">
-            Todas las historias →
-          </Link>
-        </header>
-
-        <div className="tarjeta mt-6 grid gap-5 overflow-hidden sm:grid-cols-[200px_1fr] sm:items-center">
-          <img
-            src={anaBelen.imagen}
-            alt={anaBelen.imagenAlt}
-            width={202}
-            height={405}
-            loading="lazy"
-            className="h-full w-full object-cover object-top sm:aspect-auto"
-          />
-          <div className="p-5 sm:pr-7">
-            <p className="text-xs font-bold uppercase tracking-widest text-turquesa-dark">
-              {anaBelen.categoria}
-            </p>
-            <p className="titular mt-2 text-2xl leading-tight">{anaBelen.tituloTarjeta}</p>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              {anaBelen.textoBreve}
-            </p>
-            <Link
-              to="/historias/$slug"
-              params={{ slug: anaBelen.slug }}
-              className="mt-5 inline-flex min-h-11 items-center rounded-full bg-magenta px-6 text-sm font-bold uppercase tracking-wide text-white transition-transform hover:-translate-y-0.5"
-            >
-              Leer historia
-            </Link>
-          </div>
-        </div>
       </section>
     </>
   );
